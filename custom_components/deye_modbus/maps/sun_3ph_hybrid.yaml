@@ -1422,8 +1422,8 @@ controls:
     enabled_default: false
 
   - type: select
-    name: Inverter output power control mode
-    unique_id: inverter_output_power_control_mode
+    name: Remote Inverter output power control mode
+    unique_id: remote_inverter_output_power_control_mode
     register_type: holding
     address: 1104
     entity_category: config
@@ -1437,8 +1437,8 @@ controls:
         value: 2
 
   - type: select
-    name: Battery side control mode
-    unique_id: battery_side_control_mode
+    name: Remote Battery side control mode
+    unique_id: remote_battery_side_control_mode
     register_type: holding
     address: 1105
     entity_category: config
@@ -1454,8 +1454,8 @@ controls:
         value: 5
 
   - type: select
-    name: AC power control mode
-    unique_id: ac_power_control_mode
+    name: Remote AC power control mode
+    unique_id: remote_ac_power_control_mode
     register_type: holding
     address: 1106
     entity_category: config
@@ -1467,8 +1467,8 @@ controls:
         value: 1
 
   - type: number
-    name: Battery constant power mode
-    unique_id: battery_constant_power_mode
+    name: Remote Battery constant power mode
+    unique_id: remote_battery_constant_power_mode
     register_type: holding
     address: 1109
     min: -1200
@@ -1476,13 +1476,13 @@ controls:
     step: 0.1
     unit_of_measurement: '%'
     mode: box
-    write_factor: 1
+    write_factor: 10
     entity_category: config
     enabled_default: false
 
   - type: number
-    name: Setting INV output power 3phase
-    unique_id: setting_inv_output_power_3phase
+    name: Remote Setting INV output power 3phase
+    unique_id: remote_setting_inv_output_power_3phase
     register_type: holding
     address: 1111
     min: -1200
@@ -1490,6 +1490,6 @@ controls:
     step: 0.1
     unit_of_measurement: '%'
     mode: box
-    write_factor: 1
+    write_factor: 10
     entity_category: config
     enabled_default: false
