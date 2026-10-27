@@ -839,6 +839,36 @@ controls:
       - label: Zero Export To CT
         value: 2
 
+  - type: select
+    name: Gen Port Mode
+    unique_id: gen_mode
+    register_type: holding
+    address: 133
+    icon: mdi:home-lightning-bolt
+    entity_category: config
+    options:
+      - label: Generator
+        value: 0
+      - label: Smart Load
+        value: 1
+      - label: Micro Inv Input
+        value: 2
+
+  - type: select
+    name: Gen Port AC-Couple Mode
+    unique_id: gen_ac_couple_mode
+    register_type: holding
+    address: 234
+    icon: mdi:home-lightning-bolt
+    entity_category: config
+    options:
+      - label: 'Off'
+        value: 0
+      - label: Load Side
+        value: 1
+      - label: Grid Side
+        value: 2
+
   # ------------------------------------------------------------- power limits
   - type: number
     name: Max Sell Power
@@ -887,7 +917,7 @@ controls:
     register_type: holding
     address: 108
     min: 0
-    max: 185
+    max: 240
     step: 1
     unit_of_measurement: A
     mode: box
@@ -900,7 +930,7 @@ controls:
     register_type: holding
     address: 109
     min: 0
-    max: 185
+    max: 240
     step: 1
     unit_of_measurement: A
     mode: box
@@ -966,7 +996,7 @@ controls:
     register_type: holding
     address: 128
     min: 0
-    max: 185
+    max: 240
     step: 1
     unit_of_measurement: A
     mode: box
