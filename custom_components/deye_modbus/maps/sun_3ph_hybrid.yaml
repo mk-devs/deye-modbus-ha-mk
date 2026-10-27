@@ -931,6 +931,7 @@ controls:
     unit_of_measurement: '%'
     mode: slider
     write_factor: 10
+    read_factor: 0.1
     entity_category: config
     enabled_default: false
 
@@ -1039,6 +1040,7 @@ controls:
     unit_of_measurement: V
     mode: box
     write_factor: 10
+    read_factor: 0.1
     entity_category: config
     enabled_default: false
 
@@ -1053,6 +1055,7 @@ controls:
     unit_of_measurement: V
     mode: box
     write_factor: 10
+    read_factor: 0.1
     entity_category: config
     enabled_default: false
 
@@ -1555,8 +1558,8 @@ controls:
     register_type: holding
     address: 1101
     min: 10
-    max: 18000
-    step: 10
+    max: 0xFFFF
+    step: 1
     unit_of_measurement: 's'
     mode: box
     write_factor: 1
@@ -1616,9 +1619,11 @@ controls:
     min: -1200
     max: 1200
     step: 0.1
+    signed: true
     unit_of_measurement: '%'
     mode: box
     write_factor: 10
+    read_factor: 0.1
     entity_category: config
     enabled_default: false
 
@@ -1630,8 +1635,10 @@ controls:
     min: -1200
     max: 1200
     step: 0.1
+    signed: true
     unit_of_measurement: '%'
     mode: box
     write_factor: 10
+    read_factor: 0.1
     entity_category: config
     enabled_default: false
