@@ -875,6 +875,21 @@ controls:
       - label: Micro Inv Input
         value: 2
 
+  - type: select
+    name: Gen Port AC-Couple Mode
+    unique_id: gen_ac_couple_mode
+    register_type: holding
+    address: 234
+    icon: mdi:home-lightning-bolt
+    entity_category: config
+    options:
+      - label: 'Off'
+        value: 0
+      - label: Load Side
+        value: 1
+      - label: Grid Side
+        value: 2
+
   # ------------------------------------------------------------- power limits
   # Register 340 is "Max Solar Power" and 143 is "Max Sell Power" on the
   # inverter screen / Solarman app. The unique_ids predate that fix and are
