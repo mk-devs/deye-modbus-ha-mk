@@ -921,6 +921,20 @@ controls:
     entity_category: config
 
   - type: number
+    name: Zero Export Power
+    unique_id: grid_export_power
+    register_type: holding
+    address: 105
+    min: 20
+    max: 500
+    step: 1
+    unit_of_measurement: W
+    mode: box
+    write_factor: 1
+    entity_category: config
+    enabled_default: true
+
+  - type: number
     name: Active Power Regulation
     unique_id: active_power_regulation
     register_type: holding
@@ -1541,7 +1555,7 @@ controls:
     register_type: holding
     address: 1100
     entity_category: config
-    enabled_default: false
+    enabled_default: true
     options:
       - label: 'Off'
         value: 0
@@ -1564,7 +1578,7 @@ controls:
     mode: box
     write_factor: 1
     entity_category: config
-    enabled_default: false
+    enabled_default: true
 
   - type: select
     name: Remote Inverter output power control mode
@@ -1572,7 +1586,7 @@ controls:
     register_type: holding
     address: 1104
     entity_category: config
-    enabled_default: false
+    enabled_default: true
     options:
       - label: AC side
         value: 0
@@ -1582,20 +1596,24 @@ controls:
         value: 2
 
   - type: select
-    name: Remote Battery side control mode
-    unique_id: remote_battery_side_control_mode
+    name: Remote Battery control mode
+    unique_id: remote_battery_control_mode
     register_type: holding
     address: 1105
     entity_category: config
-    enabled_default: false
+    enabled_default: true
     options:
+      - label: Voltage
+        value: 0
+      - label: Current
+        value: 1
       - label: Power
         value: 2
       - label: SoC
         value: 3
-      - label: Voltage+Current
+      - label: Voltage Current
         value: 4
-      - label: Power+SoC
+      - label: Power SoC
         value: 5
 
   - type: select
@@ -1604,7 +1622,7 @@ controls:
     register_type: holding
     address: 1106
     entity_category: config
-    enabled_default: false
+    enabled_default: true
     options:
       - label: Three phase together
         value: 0
@@ -1612,33 +1630,49 @@ controls:
         value: 1
 
   - type: number
-    name: Remote Battery constant power mode
-    unique_id: remote_battery_constant_power_mode
+    name: Remote Battery constant power
+    unique_id: remote_battery_constant_power
     register_type: holding
     address: 1109
-    min: -1200
-    max: 1200
-    step: 0.1
+    min: -12000
+    max: 12000
+    step: 1
+    signed: true
+    unit_of_measurement: 'W'
+    mode: box
+    write_factor: 0.083333333333333
+    read_factor: 12
+    entity_category: config
+    enabled_default: true
+
+  - type: number
+    name: Remote Battery SoC
+    unique_id: remote_battery_soc
+    register_type: holding
+    address: 1110
+    min: 0
+    max: 100
+    step: 1
     signed: true
     unit_of_measurement: '%'
     mode: box
     write_factor: 10
     read_factor: 0.1
     entity_category: config
-    enabled_default: false
+    enabled_default: true
 
   - type: number
     name: Remote Setting INV output power 3phase
     unique_id: remote_setting_inv_output_power_3phase
     register_type: holding
     address: 1111
-    min: -1200
-    max: 1200
-    step: 0.1
+    min: -12000
+    max: 12000
+    step: 1
     signed: true
-    unit_of_measurement: '%'
+    unit_of_measurement: 'W'
     mode: box
-    write_factor: 10
-    read_factor: 0.1
+    write_factor: 0.083333333333333
+    read_factor: 12
     entity_category: config
-    enabled_default: false
+    enabled_default: true
